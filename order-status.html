@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Status | DenimMan</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html">DENIMMAN</a>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="products.html">SHOP</a>
+            <a href="order.html">HOW TO ORDER</a>
+            <a href="order-status.html">สถานะคำสั่งซื้อ</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="shipping.html">ค่าจัดส่ง</a>
+        </nav>
+
+        <div class="nav-cart">
+            <a href="cart.html">🛒 รถเข็นของคุณ</a>
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================== PAGE HEADER ==================== -->
+
+    <section class="page-header">
+
+        <p>DENIMMAN</p>
+
+        <h1>ORDER STATUS</h1>
+
+        <span>
+            ตรวจสอบสถานะคำสั่งซื้อของคุณ
+        </span>
+
+    </section>
+
+
+
+    <!-- ==================== ORDER STATUS ==================== -->
+
+    <section class="order-status-section">
+
+        <div class="order-status-container">
+
+
+            <div class="order-status-intro">
+
+                <p class="small-title">
+                    CHECK YOUR ORDER
+                </p>
+
+                <h2>
+                    TRACK YOUR<br>
+                    ORDER
+                </h2>
+
+                <p>
+                    กรอกเลขที่คำสั่งซื้อของคุณ
+                    เพื่อตรวจสอบสถานะการสั่งซื้อ
+                </p>
+
+            </div>
+
+
+
+            <!-- SEARCH ORDER -->
+
+            <div class="order-status-search">
+
+                <label for="order-id">
+                    เลขที่คำสั่งซื้อ
+                </label>
+
+                <input
+                    type="text"
+                    id="order-id"
+                    placeholder="เช่น DM202609111234"
+                >
+
+                <button
+                    type="button"
+                    id="check-order"
+                    class="btn btn-dark"
+                >
+                    CHECK STATUS
+                </button>
+
+            </div>
+
+
+
+            <!-- STATUS RESULT -->
+
+            <div
+                id="order-status-result"
+                class="order-status-result"
+            >
+
+                <p class="status-placeholder">
+                    กรอกเลขที่คำสั่งซื้อ
+                    แล้วกด CHECK STATUS
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    DENIMMAN
+                </h2>
+
+                <p>
+                    Street Denim for Everyday Life.
+                </p>
+
+            </div>
+
+
+            <div class="footer-menu">
+
+                <h3>
+                    MENU
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Shop
+                </a>
+
+                <a href="order.html">
+                    How to Order
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    CONTACT
+                </h3>
+
+                <p>
+                    LINE: @denimman
+                </p>
+
+                <a href="contact.html">
+                    Contact Us →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DENIMMAN. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+    <script type="module" src="js/order-status.js"></script>
+
+</body>
+</html>

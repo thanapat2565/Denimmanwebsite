@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>สินค้า | DenimMan</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+   <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html">DENIMMAN</a>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="products.html">SHOP</a>
+            <a href="order.html">HOW TO ORDER</a>
+            <a href="order-status.html">สถานะคำสั่งซื้อ</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="shipping.html">ค่าจัดส่ง</a>
+        </nav>
+
+        <div class="nav-cart">
+            <a href="cart.html">🛒 รถเข็นของคุณ</a>
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         Product Detail
+    =========================================== -->
+
+    <main class="product-detail-section">
+
+        <div class="product-detail-container">
+
+
+            <!-- Breadcrumb -->
+
+            <div class="product-breadcrumb">
+
+                <a href="index.html">HOME</a>
+
+                <span>/</span>
+
+                <a href="products.html">SHOP</a>
+
+                <span>/</span>
+
+                <span id="breadcrumb-name">
+                    PRODUCT
+                </span>
+
+            </div>
+
+
+            <div class="product-detail-grid">
+
+
+                <!-- ==================================
+                     Product Image
+                =================================== -->
+
+                <div class="product-detail-image">
+
+                    <span
+                        class="detail-tag"
+                        id="product-tag"
+                    >
+                        DENIMMAN
+                    </span>
+
+
+                    <img
+                        id="product-image"
+                        src="images/product1.jpg"
+                        alt="Product"
+                    >
+
+                </div>
+
+
+
+                <!-- ==================================
+                     Product Information
+                =================================== -->
+
+                <div class="product-detail-info">
+
+
+                    <p
+                        class="detail-category"
+                        id="product-category"
+                    >
+                        BAGGY
+                    </p>
+
+
+                    <h1 id="product-name">
+                        Baggy Denim Black
+                    </h1>
+
+
+                    <p
+                        class="detail-price"
+                        id="product-price"
+                    >
+                        ฿1,290
+                    </p>
+
+
+                    <div class="detail-divider"></div>
+
+
+
+                    <!-- Description -->
+
+                    <div class="detail-description">
+
+                        <h3>
+                            PRODUCT DETAILS
+                        </h3>
+
+                        <p id="product-description">
+
+                            A relaxed baggy denim designed
+                            for an everyday streetwear look.
+                            Comfortable, easy to style,
+                            and made for everyday wear.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Size -->
+
+                    <div class="size-selection">
+
+                        <div class="selection-header">
+
+                            <h3>
+                                SELECT SIZE
+                            </h3>
+
+                            <a href="#size-guide">
+                                SIZE GUIDE
+                            </a>
+
+                        </div>
+
+
+                        <div class="size-options">
+
+                            <button class="size-btn">
+                                S
+                            </button>
+
+                            <button class="size-btn">
+                                M
+                            </button>
+
+                            <button class="size-btn">
+                                L
+                            </button>
+
+                            <button class="size-btn">
+                                XL
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Quantity -->
+
+                    <div class="quantity-section">
+
+                        <h3>
+                            QUANTITY
+                        </h3>
+
+
+                        <div class="quantity-control">
+
+                            <button
+                                type="button"
+                                id="minus-btn"
+                                class="quantity-btn"
+                            >
+                                −
+                            </button>
+
+
+                            <span id="quantity">
+                                1
+                            </span>
+
+
+                            <button
+                                type="button"
+                                id="plus-btn"
+                                class="quantity-btn"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Add to Cart -->
+
+                    <button
+                        type="button"
+                        id="add-to-cart"
+                        class="add-cart-btn"
+                    >
+                        ADD TO CART
+                    </button>
+
+
+
+                    <!-- Order Information -->
+
+                    <div class="product-notes">
+
+
+                        <div class="product-note">
+
+                            <strong>
+                                DELIVERY
+                            </strong>
+
+                            <span>
+                                Nationwide delivery available.
+                            </span>
+
+                        </div>
+
+
+                        <div class="product-note">
+
+                            <strong>
+                                PAYMENT
+                            </strong>
+
+                            <span>
+                                Bank Transfer / PromptPay
+                            </span>
+
+                        </div>
+
+
+                        <div class="product-note">
+
+                            <strong>
+                                CUSTOMER SERVICE
+                            </strong>
+
+                            <span>
+                                Contact us through LINE.
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 Size Guide
+            =========================================== -->
+
+            <section
+                class="product-size-guide"
+                id="size-guide"
+            >
+
+
+                <div class="size-guide-heading">
+
+                    <p class="small-title">
+                        DENIMMAN FIT GUIDE
+                    </p>
+
+                    <h2>
+                        SIZE GUIDE
+                    </h2>
+
+                    <p>
+
+                        Use this guide to choose
+                        the right size.
+
+                        If you're unsure,
+                        contact our staff through LINE.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="size-table">
+
+
+                    <div class="size-row size-header">
+
+                        <span>
+                            SIZE
+                        </span>
+
+                        <span>
+                            WAIST
+                        </span>
+
+                        <span>
+                            HIP
+                        </span>
+
+                        <span>
+                            LENGTH
+                        </span>
+
+                    </div>
+
+
+                    <div class="size-row">
+
+                        <span>S</span>
+
+                        <span>28"</span>
+
+                        <span>38"</span>
+
+                        <span>40"</span>
+
+                    </div>
+
+
+                    <div class="size-row">
+
+                        <span>M</span>
+
+                        <span>30"</span>
+
+                        <span>40"</span>
+
+                        <span>41"</span>
+
+                    </div>
+
+
+                    <div class="size-row">
+
+                        <span>L</span>
+
+                        <span>32"</span>
+
+                        <span>42"</span>
+
+                        <span>42"</span>
+
+                    </div>
+
+
+                    <div class="size-row">
+
+                        <span>XL</span>
+
+                        <span>34"</span>
+
+                        <span>44"</span>
+
+                        <span>43"</span>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================================
+                 CUSTOMER REVIEWS
+            =========================================== -->
+
+            <section class="product-reviews">
+
+
+                <div class="reviews-heading">
+
+                    <p class="small-title">
+                        DENIMMAN COMMUNITY
+                    </p>
+
+                    <h2>
+                        CUSTOMER REVIEWS
+                    </h2>
+
+                    <p>
+                        See what our customers think
+                        about this product.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Rating Summary -->
+
+                <div class="rating-summary">
+
+
+                    <div class="rating-average">
+
+                        <strong id="average-rating">
+                            0.0
+                        </strong>
+
+
+                        <div
+                            id="average-stars"
+                            class="stars"
+                        >
+                            ☆☆☆☆☆
+                        </div>
+
+
+                        <span id="review-count">
+                            0 reviews
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Write Review -->
+
+                <div class="review-form">
+
+                    <h3>
+                        WRITE A REVIEW
+                    </h3>
+
+
+                    <input
+                        type="text"
+                        id="review-name"
+                        placeholder="Your name"
+                        maxlength="50"
+                    >
+
+
+                    <div class="review-rating">
+
+                        <span>
+                            YOUR RATING
+                        </span>
+
+
+                        <div id="rating-stars">
+
+                            <button
+                                type="button"
+                                data-rating="1"
+                            >
+                                ☆
+                            </button>
+
+                            <button
+                                type="button"
+                                data-rating="2"
+                            >
+                                ☆
+                            </button>
+
+                            <button
+                                type="button"
+                                data-rating="3"
+                            >
+                                ☆
+                            </button>
+
+                            <button
+                                type="button"
+                                data-rating="4"
+                            >
+                                ☆
+                            </button>
+
+                            <button
+                                type="button"
+                                data-rating="5"
+                            >
+                                ☆
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <textarea
+                        id="review-text"
+                        placeholder="Write your review..."
+                        rows="5"
+                        maxlength="500"
+                    ></textarea>
+
+
+                    <button
+                        type="button"
+                        id="submit-review"
+                        class="add-cart-btn"
+                    >
+                        SUBMIT REVIEW
+                    </button>
+
+
+                    <p
+                        id="review-message"
+                        class="review-message"
+                    ></p>
+
+                </div>
+
+
+
+                <!-- Review List -->
+
+                <div
+                    id="review-list"
+                    class="review-list"
+                >
+
+                    <p class="review-placeholder">
+                        LOADING REVIEWS...
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==========================================
+                 Back to Shop
+            =========================================== -->
+
+            <div class="back-to-shop">
+
+                <a href="products.html">
+                    ← BACK TO SHOP
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         Footer
+    =========================================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                DENIMMAN
+            </div>
+
+
+            <p>
+                STREET DENIM FOR YOUR EVERYDAY.
+            </p>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    HOME
+                </a>
+
+                <a href="products.html">
+                    SHOP
+                </a>
+
+                <a href="order.html">
+                    HOW TO ORDER
+                </a>
+
+                <a href="contact.html">
+                    CONTACT
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DENIMMAN. ALL RIGHTS RESERVED.
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JavaScript
+    =========================================== -->
+
+    <script
+        type="module"
+        src="js/products.js"
+    ></script>
+
+    <script src="js/cart.js"></script>
+
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>

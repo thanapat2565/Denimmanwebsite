@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manage Orders | DenimMan</title>
+
+    <link
+        rel="stylesheet"
+        href="adminstyle.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ADMIN HEADER -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-container">
+
+            <a
+                href="admin.html"
+                class="admin-brand"
+            >
+                DENIMMAN <span>ADMIN</span>
+            </a>
+
+
+            <button
+                id="admin-logout"
+                class="admin-logout-button"
+            >
+                LOGOUT
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="admin-orders-page">
+
+        <div class="admin-orders-container">
+
+
+            <!-- PAGE TITLE -->
+
+            <div class="admin-page-title">
+
+                <p class="admin-small-title">
+                    DENIMMAN STORE
+                </p>
+
+                <h1>
+                    ORDER MANAGEMENT
+                </h1>
+
+                <p>
+                    View and manage customer orders.
+                </p>
+
+            </div>
+
+
+
+            <!-- BACK -->
+
+            <div class="admin-orders-back">
+
+                <a href="admin.html">
+                    ← BACK TO DASHBOARD
+                </a>
+
+            </div>
+
+
+
+            <!-- FILTER -->
+
+            <section class="admin-order-filter">
+
+                <div class="admin-filter-group">
+
+                    <label for="order-search">
+                        SEARCH ORDER
+                    </label>
+
+                    <input
+                        type="text"
+                        id="order-search"
+                        placeholder="Order ID or customer name"
+                    >
+
+                </div>
+
+
+                <div class="admin-filter-group">
+
+                    <label for="order-status-filter">
+                        STATUS
+                    </label>
+
+                    <select id="order-status-filter">
+
+                        <option value="ALL">
+                            ALL STATUS
+                        </option>
+
+                        <option value="รอดำเนินการ">
+                            รอดำเนินการ
+                        </option>
+
+                        <option value="กำลังเตรียมสินค้า">
+                            กำลังเตรียมสินค้า
+                        </option>
+
+                        <option value="กำลังจัดส่ง">
+                            กำลังจัดส่ง
+                        </option>
+
+                        <option value="จัดส่งสำเร็จ">
+                            จัดส่งสำเร็จ
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    id="refresh-orders"
+                    class="admin-refresh-button"
+                >
+                    REFRESH
+                </button>
+
+            </section>
+
+
+
+            <!-- ORDER COUNT -->
+
+            <div class="admin-orders-count">
+
+                <span>
+                    ORDERS
+                </span>
+
+                <strong id="order-count">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <!-- ORDERS TABLE -->
+
+            <section class="admin-orders-table-section">
+
+                <div class="admin-orders-table">
+
+
+                    <!-- TABLE HEADER -->
+
+                    <div class="admin-orders-table-header">
+
+                        <div>
+                            ORDER ID
+                        </div>
+
+                        <div>
+                            CUSTOMER
+                        </div>
+
+                        <div>
+                            TOTAL
+                        </div>
+
+                        <div>
+                            PAYMENT
+                        </div>
+
+                        <div>
+                            STATUS
+                        </div>
+
+                        <div>
+                            ACTION
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ORDER LIST -->
+
+                    <div id="admin-orders-list">
+
+                        <p class="admin-loading">
+                            Loading orders...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ORDER DETAIL -->
+
+            <section
+                id="order-detail-section"
+                class="admin-order-detail-section"
+                style="display: none;"
+            >
+
+
+                <div class="admin-detail-header">
+
+                    <div>
+
+                        <p class="admin-small-title">
+                            ORDER DETAILS
+                        </p>
+
+                        <h2 id="detail-order-id">
+                            ORDER
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        id="close-order-detail"
+                        class="admin-close-button"
+                    >
+                        CLOSE
+                    </button>
+
+                </div>
+
+
+
+                <!-- CUSTOMER INFORMATION -->
+
+                <div class="admin-detail-card">
+
+                    <h3>
+                        CUSTOMER INFORMATION
+                    </h3>
+
+
+                    <div class="admin-detail-grid">
+
+
+                        <div class="admin-detail-item">
+
+                            <span>
+                                NAME
+                            </span>
+
+                            <strong id="detail-customer-name">
+                                -
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="admin-detail-item">
+
+                            <span>
+                                PHONE
+                            </span>
+
+                            <strong id="detail-customer-phone">
+                                -
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="admin-detail-item">
+
+                            <span>
+                                EMAIL
+                            </span>
+
+                            <strong id="detail-customer-email">
+                                -
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="admin-detail-item admin-detail-full">
+
+                            <span>
+                                SHIPPING ADDRESS
+                            </span>
+
+                            <strong id="detail-customer-address">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCTS -->
+
+                <div class="admin-detail-card">
+
+                    <h3>
+                        ORDER ITEMS
+                    </h3>
+
+
+                    <div id="detail-order-items">
+
+                        <p>
+                            No products.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PAYMENT -->
+
+                <div class="admin-detail-card">
+
+                    <h3>
+                        PAYMENT
+                    </h3>
+
+
+                    <div class="admin-detail-grid">
+
+
+                        <div class="admin-detail-item">
+
+                            <span>
+                                PAYMENT METHOD
+                            </span>
+
+                            <strong id="detail-payment-method">
+                                -
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="admin-detail-item">
+
+                            <span>
+                                PAYMENT STATUS
+                            </span>
+
+                            <strong id="detail-payment-status">
+                                -
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="admin-detail-item">
+
+                            <span>
+                                SUBTOTAL
+                            </span>
+
+                            <strong id="detail-subtotal">
+                                ฿0
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="admin-detail-item">
+
+                            <span>
+                                SHIPPING
+                            </span>
+
+                            <strong id="detail-shipping">
+                                ฿0
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="admin-detail-item">
+
+                            <span>
+                                TOTAL
+                            </span>
+
+                            <strong id="detail-total">
+                                ฿0
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ORDER MANAGEMENT -->
+
+                <div class="admin-detail-card">
+
+                    <h3>
+                        ORDER MANAGEMENT
+                    </h3>
+
+
+                    <div class="admin-manage-form">
+
+
+                        <!-- PAYMENT STATUS -->
+
+                        <div class="admin-form-group">
+
+                            <label for="detail-payment-status-select">
+                                PAYMENT STATUS
+                            </label>
+
+
+                            <select
+                                id="detail-payment-status-select"
+                            >
+
+                                <option value="รอชำระเงิน">
+                                    รอชำระเงิน
+                                </option>
+
+                                <option value="ชำระเงินแล้ว">
+                                    ชำระเงินแล้ว
+                                </option>
+
+                                <option value="ชำระเงินปลายทาง">
+                                    ชำระเงินปลายทาง
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- ORDER STATUS -->
+
+                        <div class="admin-form-group">
+
+                            <label for="detail-order-status">
+                                ORDER STATUS
+                            </label>
+
+
+                            <select id="detail-order-status">
+
+                                <option value="รอดำเนินการ">
+                                    รอดำเนินการ
+                                </option>
+
+                                <option value="กำลังเตรียมสินค้า">
+                                    กำลังเตรียมสินค้า
+                                </option>
+
+                                <option value="กำลังจัดส่ง">
+                                    กำลังจัดส่ง
+                                </option>
+
+                                <option value="จัดส่งสำเร็จ">
+                                    จัดส่งสำเร็จ
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                       <!-- SHIPPING COMPANY -->
+
+<div class="admin-form-group">
+
+    <label for="detail-shipping-company">
+        SHIPPING COMPANY
+    </label>
+
+    <select id="detail-shipping-company">
+
+        <option value="">
+            เลือกบริษัทขนส่ง
+        </option>
+
+        <option value="Flash Express">
+            Flash Express
+        </option>
+
+        <option value="Kerry Express">
+            Kerry Express
+        </option>
+
+        <option value="ไปรษณีย์ไทย">
+            ไปรษณีย์ไทย
+        </option>
+
+    </select>
+
+</div>
+
+
+
+                        <!-- TRACKING -->
+
+                        <div class="admin-form-group">
+
+                            <label for="detail-tracking-number">
+                                TRACKING NUMBER
+                            </label>
+
+                            <input
+                                type="text"
+                                id="detail-tracking-number"
+                                placeholder="Enter tracking number"
+                            >
+
+                        </div>
+
+
+
+                        <!-- SAVE -->
+
+                        <button
+                            id="save-order-status"
+                            class="admin-save-button"
+                        >
+                            SAVE ORDER
+                        </button>
+
+
+                        <p
+                            id="order-save-message"
+                            class="admin-save-message"
+                        ></p>
+
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script
+        type="module"
+        src="js/admin-orders.js"
+    ></script>
+
+
+</body>
+
+</html>

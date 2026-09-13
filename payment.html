@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Payment | DenimMan</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+  <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html">DENIMMAN</a>
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <section class="page-header">
+
+        <div class="container">
+
+            <p class="section-label">
+                DENIMMAN STORE
+            </p>
+
+            <h1>
+                PAYMENT
+            </h1>
+
+            <p>
+                รายละเอียดการชำระเงิน
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PAYMENT CONTENT
+    ========================== -->
+
+    <section class="payment-section">
+
+        <div class="payment-container">
+
+
+            <!-- ORDER INFORMATION -->
+
+            <div class="payment-card">
+
+                <h2>
+                    ORDER INFORMATION
+                </h2>
+
+
+                <div class="payment-info-row">
+
+                    <span>
+                        เลขที่คำสั่งซื้อ
+                    </span>
+
+                    <strong id="payment-order-id">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="payment-info-row">
+
+                    <span>
+                        วิธีชำระเงิน
+                    </span>
+
+                    <strong id="payment-method">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="payment-info-row">
+
+                    <span>
+                        ยอดรวม
+                    </span>
+
+                    <strong
+                        id="payment-total"
+                        class="payment-total"
+                    >
+                        ฿0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DYNAMIC PAYMENT -->
+
+            <div
+                id="payment-content"
+                class="payment-card"
+            >
+
+                <!-- JavaScript จะใส่เนื้อหาตรงนี้ -->
+
+            </div>
+
+
+
+            <!-- CUSTOMER INFO -->
+
+            <div class="payment-card">
+
+                <h2>
+                    SHIPPING INFORMATION
+                </h2>
+
+
+                <div class="payment-customer">
+
+                    <p>
+                        <strong>
+                            ผู้รับ:
+                        </strong>
+
+                        <span id="customer-name">
+                            -
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>
+                            โทร:
+                        </strong>
+
+                        <span id="customer-phone">
+                            -
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>
+                            ที่อยู่:
+                        </strong>
+
+                        <span id="customer-address">
+                            -
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>
+                            จังหวัด:
+                        </strong>
+
+                        <span id="customer-province">
+                            -
+                        </span>
+                    </p>
+
+
+                    <p>
+                        <strong>
+                            รหัสไปรษณีย์:
+                        </strong>
+
+                        <span id="customer-postcode">
+                            -
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="payment-contact">
+
+                <h2>
+                    NEED HELP?
+                </h2>
+
+                <p>
+                    หากมีปัญหาเกี่ยวกับการชำระเงิน
+                    สามารถติดต่อ DenimMan ผ่าน LINE ได้
+                </p>
+
+
+                <a
+                    href="contact.html"
+                    class="btn btn-dark"
+                >
+                    CONTACT US
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <h2>
+                    DENIMMAN
+                </h2>
+
+                <p>
+                    STREETWEAR DENIM
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    © 2026 DenimMan
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/main.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                // =================================
+                // GET CURRENT ORDER
+                // =================================
+
+                const orderData =
+                    localStorage.getItem(
+                        "denimmanCurrentOrder"
+                    );
+
+
+                const paymentContent =
+                    document.getElementById(
+                        "payment-content"
+                    );
+
+
+                // =================================
+                // NO ORDER
+                // =================================
+
+                if (!orderData) {
+
+                    paymentContent.innerHTML = `
+
+                        <h2>
+                            ไม่พบคำสั่งซื้อ
+                        </h2>
+
+                        <p>
+                            กรุณาทำรายการสั่งซื้อก่อน
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-dark"
+                        >
+                            SHOP NOW
+                        </a>
+
+                    `;
+
+                    return;
+
+                }
+
+
+                // =================================
+                // PARSE ORDER
+                // =================================
+
+                const order =
+                    JSON.parse(orderData);
+
+
+                // =================================
+                // ORDER INFO
+                // =================================
+
+                document.getElementById(
+                    "payment-order-id"
+                ).textContent =
+                    order.orderId || "-";
+
+
+                document.getElementById(
+                    "payment-total"
+                ).textContent =
+                    "฿" +
+                    Number(
+                        order.total || 0
+                    ).toLocaleString("th-TH");
+
+
+                // =================================
+                // CUSTOMER
+                // =================================
+
+                document.getElementById(
+                    "customer-name"
+                ).textContent =
+                    order.customer?.name || "-";
+
+
+                document.getElementById(
+                    "customer-phone"
+                ).textContent =
+                    order.customer?.phone || "-";
+
+
+                document.getElementById(
+                    "customer-address"
+                ).textContent =
+                    order.customer?.address || "-";
+
+
+                document.getElementById(
+                    "customer-province"
+                ).textContent =
+                    order.customer?.province || "-";
+
+
+                document.getElementById(
+                    "customer-postcode"
+                ).textContent =
+                    order.customer?.postcode || "-";
+
+
+                // =================================
+                // PAYMENT METHOD
+                // =================================
+
+                const paymentMethod =
+                    order.paymentMethod;
+
+
+                const paymentMethodElement =
+                    document.getElementById(
+                        "payment-method"
+                    );
+
+
+                // =================================
+                // PROMPTPAY
+                // =================================
+
+                if (
+                    paymentMethod ===
+                    "PromptPay"
+                ) {
+
+                    paymentMethodElement.textContent =
+                        "PromptPay";
+
+
+                    paymentContent.innerHTML = `
+
+                        <h2>
+                            PROMPTPAY
+                        </h2>
+
+                        <p>
+                            กรุณาชำระเงินตามยอดรวม
+                            ของคำสั่งซื้อ
+                        </p>
+
+
+                        <div class="payment-amount">
+
+                            <span>
+                                ยอดที่ต้องชำระ
+                            </span>
+
+                            <strong>
+                                ฿${Number(
+                                    order.total || 0
+                                ).toLocaleString("th-TH")}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="payment-qr">
+
+                            <div class="qr-box">
+
+                               <img
+            src="images/13279234.jpg"
+            alt="PromptPay QR"
+            style="width: 250px; max-width: 100%;"
+        >
+
+        <p>
+            สแกน QR เพื่อชำระเงิน
+        </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="payment-instruction">
+
+                            <h3>
+                                วิธีชำระเงิน
+                            </h3>
+
+                            <ol>
+
+                                <li>
+                                    สแกน QR PromptPay
+                                </li>
+
+                                <li>
+                                    ตรวจสอบยอดเงิน
+                                </li>
+
+                                <li>
+                                    ชำระเงินตามยอดที่ระบุ
+                                </li>
+
+                                <li>
+                                    แจ้งหลักฐานการโอนผ่าน LINE
+                                </li>
+
+                            </ol>
+
+                        </div>
+
+
+                        <div class="payment-notice">
+
+                            <strong>
+                                IMPORTANT
+                            </strong>
+
+                            <p>
+                                กรุณาแจ้งหลักฐานการชำระเงิน
+                                พร้อมเลขที่คำสั่งซื้อ
+                                ผ่าน LINE ของร้าน
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="payment-notify.html"
+                            class="btn btn-dark"
+                        >
+                            แจ้งการชำระเงินผ่าน LINE
+                        </a>
+
+                    `;
+
+                }
+
+
+                // =================================
+                // COD
+                // =================================
+
+                else if (
+                    paymentMethod ===
+                    "COD"
+                ) {
+
+                    paymentMethodElement.textContent =
+                        "เก็บเงินปลายทาง (COD)";
+
+
+                    paymentContent.innerHTML = `
+
+                        <h2>
+                            CASH ON DELIVERY 📦
+                        </h2>
+
+
+                        <div class="cod-message">
+
+
+
+                            <h3>
+                                สั่งซื้อเรียบร้อยแล้ว! 
+                            </h3>
+
+
+                            <p>
+                                คุณเลือกชำระเงิน
+                                เก็บเงินปลายทาง เมื่อได้รับสินค้า
+                            </p>
+
+                        </div>
+
+
+                        <div class="payment-amount">
+
+                            <span>
+                                ยอดที่ต้องชำระ
+                            </span>
+
+                            <strong>
+                                ฿${Number(
+                                    order.total || 0
+                                ).toLocaleString("th-TH")}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="payment-instruction">
+
+                            <h3>
+                                วิธีการชำระเงิน
+                            </h3>
+
+                            <ol>
+
+                                <li>
+                                    รอรับสินค้าตามที่อยู่จัดส่ง
+                                </li>
+
+                                <li>
+                                    ชำระเงินกับพนักงานขนส่ง
+                                </li>
+
+                                <li>
+                                    ตรวจสอบสินค้า
+                                    ก่อนรับสินค้า
+                                </li>
+
+                            </ol>
+
+                        </div>
+
+
+                        <div class="payment-notice">
+
+                            <strong>
+                                IMPORTANT
+                            </strong>
+
+                            <p>
+                                กรุณาเตรียมเงินตามยอดรวม
+                                ฿${Number(
+                                    order.total || 0
+                                ).toLocaleString("th-TH")}
+                                สำหรับชำระเมื่อได้รับสินค้า
+                            </p>
+
+                        </div>
+
+                    `;
+
+                }
+
+
+                // =================================
+                // UNKNOWN PAYMENT
+                // =================================
+
+                else {
+
+                    paymentMethodElement.textContent =
+                        "-";
+
+
+                    paymentContent.innerHTML = `
+
+                        <h2>
+                            PAYMENT
+                        </h2>
+
+                        <p>
+                            ไม่พบวิธีการชำระเงิน
+                        </p>
+
+                    `;
+
+                }
+
+            }
+
+        );
+
+    </script>
+
+
+</body>
+</html>

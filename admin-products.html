@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Products | DenimMan</title>
+
+    <link rel="stylesheet" href="adminstyle.css">
+</head>
+
+<body>
+
+    <!-- ADMIN HEADER -->
+    <header class="admin-header">
+
+        <div class="admin-header-container">
+
+            <a href="admin.html" class="admin-brand">
+                DENIMMAN <span>ADMIN</span>
+            </a>
+
+            <button id="admin-logout" class="admin-logout-button">
+                LOGOUT
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="admin-products-page">
+
+        <div class="admin-products-container">
+
+            <!-- PAGE TITLE -->
+            <div class="admin-page-title">
+
+                <p class="admin-small-title">
+                    DENIMMAN STORE
+                </p>
+
+                <h1>
+                    PRODUCT MANAGEMENT
+                </h1>
+
+                <p>
+                    Add, edit and manage your products.
+                </p>
+
+            </div>
+
+
+            <!-- BACK + ADD -->
+            <div class="admin-products-toolbar">
+
+                <a
+                    href="admin.html"
+                    class="admin-products-back"
+                >
+                    ← BACK TO DASHBOARD
+                </a>
+
+                <button
+                    id="add-product-button"
+                    class="admin-add-product-button"
+                >
+                    + ADD PRODUCT
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT LIST -->
+            <section class="admin-products-section">
+
+                <div class="admin-products-count">
+
+                    <span>
+                        PRODUCTS
+                    </span>
+
+                    <strong id="product-count">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div id="admin-products-list">
+
+                    <p class="admin-loading">
+                        Loading products...
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRODUCT FORM -->
+            <section
+                id="product-form-section"
+                class="admin-product-form-section"
+                style="display: none;"
+            >
+
+                <div class="admin-product-form-header">
+
+                    <div>
+
+                        <p class="admin-small-title">
+                            PRODUCT INFORMATION
+                        </p>
+
+                        <h2 id="product-form-title">
+                            ADD PRODUCT
+                        </h2>
+
+                    </div>
+
+                    <button
+                        id="close-product-form"
+                        class="admin-close-button"
+                    >
+                        CLOSE
+                    </button>
+
+                </div>
+
+
+                <form id="product-form">
+
+                    <!-- Hidden ID -->
+                    <input
+                        type="hidden"
+                        id="product-id"
+                    >
+
+
+                    <!-- PRODUCT NAME -->
+                    <div class="admin-product-form-card">
+
+                        <h3>
+                            BASIC INFORMATION
+                        </h3>
+
+
+                        <div class="admin-form-group">
+
+                            <label for="product-name">
+                                PRODUCT NAME
+                            </label>
+
+                            <input
+                                type="text"
+                                id="product-name"
+                                placeholder="e.g. Baggy Denim Black"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="admin-product-form-grid">
+
+                            <div class="admin-form-group">
+
+                                <label for="product-category">
+                                    CATEGORY
+                                </label>
+
+                                <select
+                                    id="product-category"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select category
+                                    </option>
+
+                                    <option value="BAGGY">
+                                        BAGGY
+                                    </option>
+
+                                    <option value="WIDE LEG">
+                                        WIDE LEG
+                                    </option>
+
+                                    <option value="CARGO">
+                                        CARGO
+                                    </option>
+
+                                    <option value="STRAIGHT">
+                                        STRAIGHT
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="admin-form-group">
+
+                                <label for="product-price">
+                                    PRICE (THB)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="product-price"
+                                    placeholder="1290"
+                                    min="0"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-group">
+
+                            <label for="product-tag">
+                                PRODUCT TAG
+                            </label>
+
+                            <select id="product-tag">
+
+                                <option value="">
+                                    NO TAG
+                                </option>
+
+                                <option value="NEW">
+                                    NEW
+                                </option>
+
+                                <option value="BEST SELLER">
+                                    BEST SELLER
+                                </option>
+
+                                <option value="POPULAR">
+                                    POPULAR
+                                </option>
+
+                                <option value="CLASSIC">
+                                    CLASSIC
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="admin-form-group">
+
+                            <label for="product-description">
+                                DESCRIPTION
+                            </label>
+
+                            <textarea
+                                id="product-description"
+                                rows="6"
+                                placeholder="Product description..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- IMAGE -->
+                    <div class="admin-product-form-card">
+
+                        <h3>
+                            PRODUCT IMAGE
+                        </h3>
+
+
+                        <div class="admin-form-group">
+
+                            <label for="product-image">
+                                IMAGE PATH
+                            </label>
+
+                            <input
+                                type="text"
+                                id="product-image"
+                                placeholder="images/product1.jpg"
+                            >
+
+                            <p class="admin-form-help">
+                                Example: images/product1.jpg
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            id="product-image-preview"
+                            class="admin-product-image-preview"
+                        >
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+                    <div class="admin-product-form-card">
+
+                        <h3>
+                            PRODUCT STATUS
+                        </h3>
+
+
+                        <label class="admin-product-status-toggle">
+
+                            <input
+                                type="checkbox"
+                                id="product-active"
+                                checked
+                            >
+
+                            <span>
+                                PRODUCT IS ACTIVE
+                            </span>
+
+                        </label>
+
+
+                        <p class="admin-form-help">
+                            Active products can be displayed and sold on the store.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SAVE -->
+                    <div class="admin-product-form-actions">
+
+                        <button
+                            type="submit"
+                            id="save-product-button"
+                            class="admin-save-button"
+                        >
+                            SAVE PRODUCT
+                        </button>
+
+                        <p
+                            id="product-save-message"
+                            class="admin-save-message"
+                        ></p>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script
+        type="module"
+        src="js/admin-products.js"
+    ></script>
+
+</body>
+</html>

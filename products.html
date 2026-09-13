@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>สินค้า | DenimMan</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+   <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html">DENIMMAN</a>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="products.html">SHOP</a>
+            <a href="order.html">HOW TO ORDER</a>
+            <a href="order-status.html">สถานะคำสั่งซื้อ</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="shipping.html">ค่าจัดส่ง</a>
+        </nav>
+
+        <div class="nav-cart">
+            <a href="cart.html">🛒 รถเข็นของคุณ</a>
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         Page Header
+    =========================================== -->
+
+    <section class="page-header shop-header">
+
+        <div class="page-header-content">
+
+            <p class="small-title">
+                DENIMMAN COLLECTION
+            </p>
+
+            <h1>
+                SHOP DENIM
+            </h1>
+
+            <p>
+                Find your fit. Find your style.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         Shop Section
+    =========================================== -->
+
+    <section class="shop-section">
+
+        <div class="shop-container">
+
+
+            <!-- ======================================
+                 Shop Top
+            ======================================= -->
+
+            <div class="shop-top">
+
+                <div>
+
+                    <p class="small-title">
+                        ALL PRODUCTS
+                    </p>
+
+                    <h2>
+                        DENIM COLLECTION
+                    </h2>
+
+                </div>
+
+
+                <!-- จำนวนสินค้าจะถูกเปลี่ยนโดย JavaScript -->
+                <p class="product-count" id="product-count">
+                    5 PRODUCTS
+                </p>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 Categories
+            ======================================= -->
+
+            <div class="shop-categories">
+
+                <a href="#all" class="category-filter active">
+                    ALL
+                </a>
+
+                <a href="#baggy" class="category-filter">
+                    BAGGY
+                </a>
+
+                <a href="#wide" class="category-filter">
+                    WIDE LEG
+                </a>
+
+                <a href="#cargo" class="category-filter">
+                    CARGO
+                </a>
+
+                <a href="#straight" class="category-filter">
+                    STRAIGHT
+                </a>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 Products
+                 
+                 products.js จะดึงสินค้าจาก
+                 Firestore แล้วนำมาแสดงตรงนี้
+            ======================================= -->
+
+            <div
+                id="product-list"
+                class="shop-product-grid"
+            >
+
+                <p class="products-loading">
+                    LOADING PRODUCTS...
+                </p>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 Size Guide
+            ======================================= -->
+
+            <div class="size-guide">
+
+                <div>
+
+                    <p class="small-title">
+                        FIND YOUR FIT
+                    </p>
+
+                    <h2>
+                        NOT SURE ABOUT YOUR SIZE?
+                    </h2>
+
+                    <p>
+                        Contact our staff on LINE for help choosing
+                        the right size before placing your order.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="contact.html"
+                    class="btn"
+                >
+                    CONTACT US
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         Footer
+    =========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                DENIMMAN
+            </div>
+
+            <p>
+                STREET DENIM FOR YOUR EVERYDAY.
+            </p>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    HOME
+                </a>
+
+                <a href="products.html">
+                    SHOP
+                </a>
+
+                <a href="order.html">
+                    HOW TO ORDER
+                </a>
+
+                <a href="contact.html">
+                    CONTACT
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DENIMMAN. ALL RIGHTS RESERVED.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JavaScript
+         
+         main.js = เมนู / Cart Count
+         products.js = โหลดสินค้าจาก Firestore
+    =========================================== -->
+
+    <script src="js/main.js"></script>
+
+    <script
+        type="module"
+        src="js/products.js"
+    ></script>
+
+
+</body>
+
+</html>

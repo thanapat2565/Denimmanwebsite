@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | DenimMan</title>
+
+    <link rel="stylesheet" href="adminstyle.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         ADMIN HEADER
+    =========================================== -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-container">
+
+            <a href="admin.html" class="admin-brand">
+                DENIMMAN
+                <span>ADMIN</span>
+            </a>
+
+            <button
+                id="admin-logout"
+                class="admin-logout-button"
+            >
+                LOGOUT
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         ADMIN DASHBOARD
+    =========================================== -->
+
+    <main class="admin-dashboard">
+
+        <div class="admin-dashboard-container">
+
+
+            <!-- Page Title -->
+
+            <div class="admin-page-title">
+
+                <p class="admin-small-title">
+                    DENIMMAN STORE
+                </p>
+
+                <h1>
+                    DASHBOARD
+                </h1>
+
+                <p>
+                    Manage your store and monitor orders.
+                </p>
+
+            </div>
+
+
+            <!-- ==========================================
+                 STATISTICS
+            =========================================== -->
+
+            <section class="admin-stats">
+
+                <div class="admin-stat-card">
+
+                    <span>
+                        TOTAL ORDERS
+                    </span>
+
+                    <strong id="total-orders">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span>
+                        TOTAL SALES
+                    </span>
+
+                    <strong id="total-sales">
+                        ฿0
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span>
+                        PENDING
+                    </span>
+
+                    <strong id="pending-orders">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span>
+                        SHIPPING
+                    </span>
+
+                    <strong id="shipping-orders">
+                        0
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 ADMIN MENU
+            =========================================== -->
+
+            <section class="admin-menu">
+
+                <a
+                    href="admin-orders.html"
+                    class="admin-menu-card"
+                >
+
+                    <div>
+                        <span>
+                            ORDERS
+                        </span>
+
+                        <h2>
+                            Manage Orders
+                        </h2>
+
+                        <p>
+                            View orders, update status
+                            and tracking information.
+                        </p>
+                    </div>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </a>
+
+
+                <a
+                    href="admin-products.html"
+                    class="admin-menu-card"
+                >
+
+                    <div>
+                        <span>
+                            PRODUCTS
+                        </span>
+
+                        <h2>
+                            Manage Products
+                        </h2>
+
+                        <p>
+                            Manage products and product information.
+                        </p>
+                    </div>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </a>
+
+            </section>
+
+
+            <!-- ==========================================
+                 RECENT ORDERS
+            =========================================== -->
+
+            <section class="admin-recent-orders">
+
+                <div class="admin-section-heading">
+
+                    <div>
+
+                        <p>
+                            STORE ACTIVITY
+                        </p>
+
+                        <h2>
+                            Recent Orders
+                        </h2>
+
+                    </div>
+
+                    <a href="admin-orders.html">
+                        VIEW ALL →
+                    </a>
+
+                </div>
+
+
+                <div
+                    id="recent-orders"
+                    class="recent-orders-list"
+                >
+
+                    <p class="admin-loading">
+                        Loading orders...
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script type="module" src="js/admin.js"></script>
+
+</body>
+
+</html>

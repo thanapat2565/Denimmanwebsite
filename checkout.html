@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ชำระเงิน | DenimMan</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html">DENIMMAN</a>
+        </div>
+
+    </header>
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+    <section class="page-header checkout-header">
+
+        <div class="container">
+
+            <p class="section-label">
+                DENIMMAN STORE
+            </p>
+
+            <h1>CHECKOUT</h1>
+
+            <p>
+                กรุณากรอกข้อมูลสำหรับจัดส่งสินค้า
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHECKOUT
+    ========================== -->
+    <section class="checkout-section">
+
+        <div class="checkout-container">
+
+            <!-- =====================
+                 CUSTOMER INFORMATION
+            ====================== -->
+            <div class="checkout-form">
+
+                <h2 class="checkout-heading">
+                    ข้อมูลผู้สั่งซื้อ
+                </h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group form-full">
+
+                        <label for="customer-name">
+                            ชื่อ - นามสกุล *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customer-name"
+                            placeholder="กรอกชื่อ - นามสกุล"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customer-phone">
+                            เบอร์โทรศัพท์ *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="customer-phone"
+                            placeholder="08XXXXXXXX"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customer-email">
+                            อีเมล
+                        </label>
+
+                        <input
+                            type="email"
+                            id="customer-email"
+                            placeholder="example@email.com"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group form-full">
+
+                        <label for="customer-address">
+                            ที่อยู่จัดส่ง *
+                        </label>
+
+                        <textarea
+                            id="customer-address"
+                            rows="4"
+                            placeholder="บ้านเลขที่ ถนน ตำบล/แขวง อำเภอ/เขต"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customer-province">
+                            จังหวัด *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customer-province"
+                            placeholder="จังหวัด"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customer-postcode">
+                            รหัสไปรษณีย์ *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customer-postcode"
+                            placeholder="40000"
+                            maxlength="5"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================
+                     PAYMENT METHOD
+                ====================== -->
+
+                <h2 class="checkout-heading checkout-heading-space">
+                    วิธีชำระเงิน
+                </h2>
+
+
+                <div class="payment-options">
+
+                    <!-- PROMPTPAY -->
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment-method"
+                            value="PromptPay"
+                            checked
+                        >
+
+                        <div class="payment-option-content">
+
+                            <strong>
+                                PromptPay
+                            </strong>
+
+                            <span>
+                                ชำระเงินผ่าน QR PromptPay
+                            </span>
+
+                        </div>
+
+                    </label>
+
+
+                    <!-- COD -->
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment-method"
+                            value="COD"
+                        >
+
+                        <div class="payment-option-content">
+
+                            <strong>
+                                เก็บเงินปลายทาง (COD)
+                            </strong>
+
+                            <span>
+                                ชำระเงินเมื่อได้รับสินค้า
+                            </span>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+
+                <div class="checkout-note">
+
+                    <strong>หมายเหตุ</strong>
+
+                    <p>
+                        หากเลือก PromptPay
+                        ระบบจะแสดงรายละเอียดการชำระเงินหลังยืนยันคำสั่งซื้อ
+                    </p>
+
+                    <p>
+                        หากเลือกเก็บเงินปลายทาง
+                        ลูกค้าจะชำระเงินกับพนักงานจัดส่งเมื่อได้รับสินค้า
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="confirm-order"
+                    class="btn btn-dark checkout-submit"
+                >
+                    CONFIRM ORDER
+                </button>
+
+            </div>
+
+
+            <!-- =====================
+                 ORDER SUMMARY
+            ====================== -->
+
+            <aside class="checkout-summary">
+
+                <div class="summary-header">
+
+                    <h2>
+                        ORDER SUMMARY
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="checkout-items"
+                    class="checkout-items"
+                >
+                    <!-- JavaScript จะใส่สินค้า -->
+                </div>
+
+
+                <div class="checkout-summary-line">
+
+                    <span>
+                        สินค้า
+                    </span>
+
+                    <span id="checkout-item-count">
+                        0 ชิ้น
+                    </span>
+
+                </div>
+
+
+                <div class="checkout-summary-line">
+
+                    <span>
+                        ค่าสินค้า
+                    </span>
+
+                    <span id="checkout-subtotal">
+                        ฿0
+                    </span>
+
+                </div>
+
+
+                <div class="checkout-summary-line">
+
+                    <span>
+                        ค่าจัดส่ง
+                    </span>
+
+                    <span id="checkout-shipping">
+                        ฿0
+                    </span>
+
+                </div>
+
+
+                <div class="checkout-summary-total">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong id="checkout-total">
+                        ฿0
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-summary-info">
+
+                    <p>
+                        🚚 จัดส่งภายใน 2–5 วัน
+                    </p>
+
+                    <p>
+                        📦 ส่งฟรีเมื่อซื้อครบ ฿1,500
+                    </p>
+
+                    <p>
+                        💬 ติดต่อสอบถามผ่าน LINE
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <h2>
+                    DENIMMAN
+                </h2>
+
+                <p>
+                    STREETWEAR DENIM
+                </p>
+
+            </div>
+
+            <div>
+
+                <p>
+                    © 2026 DenimMan
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+
+    <script
+        type="module"
+        src="js/checkout.js">
+    </script>
+
+</body>
+</html>

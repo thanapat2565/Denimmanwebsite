@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Seed Products | DenimMan</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border: 1px solid #ddd;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        button {
+            padding: 14px 24px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #result {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>DENIMMAN</h1>
+
+        <h2>SEED PRODUCTS</h2>
+
+        <p>
+            กดปุ่มด้านล่างเพื่อเพิ่มสินค้า 4 ตัว
+            เข้า Firestore
+        </p>
+
+        <button id="seed-button">
+            ADD 4 PRODUCTS
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+
+    <script
+        type="module"
+        src="js/seed-products.js"
+    ></script>
+
+</body>
+
+</html>

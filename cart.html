@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>รถเข็นของคุณ | DenimMan</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+   <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html">DENIMMAN</a>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="products.html">SHOP</a>
+            <a href="order.html">HOW TO ORDER</a>
+            <a href="order-status.html">สถานะคำสั่งซื้อ</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="shipping.html">ค่าจัดส่ง</a>
+        </nav>
+
+        <div class="nav-cart">
+            <a href="cart.html">🛒 รถเข็นของคุณ</a>
+        </div>
+
+    </header>
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+    <section class="page-header">
+
+        <div class="container">
+
+            <p class="page-label">
+                YOUR SELECTION
+            </p>
+
+            <h1>
+                SHOPPING CART
+            </h1>
+
+            <p>
+                ตรวจสอบสินค้าและจำนวนก่อนดำเนินการสั่งซื้อ
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CART
+    ========================== -->
+    <section class="cart-section">
+
+        <div class="container">
+
+            <div class="cart-layout">
+
+                <!-- =========================
+                     CART ITEMS
+                ========================== -->
+                <div class="cart-main">
+
+                   <div class="cart-heading">
+                 <h2 class="cart-title">
+                     <a href="cart.html" class="cart-link">
+                    รถเข็นของคุณ (<span id="cart-count-heading">0</span>)
+                </a>
+                  </h2>
+                        <span id="cart-count-badge">0</span>
+                    </div>
+
+
+                    <!-- CART LIST -->
+
+                    <div id="cart-list">
+
+                        <!--
+                            สินค้าจะถูกสร้าง
+                            โดย cart.js
+                        -->
+
+                    </div>
+
+
+                    <!-- =========================
+                         EMPTY CART
+                    ========================== -->
+
+                    <div
+                        id="empty-cart"
+                        class="empty-cart"
+                        style="display: none;"
+                    >
+
+                        <div class="empty-cart-icon">
+
+                            <img
+                                src="images/empty-cart.png"
+                                alt="Empty Cart"
+                            >
+
+                        </div>
+
+                        <h3>
+                            ยังไม่มีสินค้าในตะกร้า
+                        </h3>
+
+                        <p>
+                            YOUR CART IS EMPTY
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-black"
+                        >
+                            ← ดำเนินการช้อปปิ้งต่อ
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     CART SUMMARY
+                ========================== -->
+
+                <aside class="cart-summary">
+
+                    <div class="summary-header">
+
+                        <h2>
+                            สรุปคำสั่งซื้อ
+                        </h2>
+
+                    </div>
+
+
+                    <div class="summary-content">
+
+                        <!-- จำนวนสินค้า -->
+
+                        <div class="summary-row">
+
+                            <span>
+                                สินค้า
+                            </span>
+
+                            <span id="summary-items">
+                                0 ชิ้น
+                            </span>
+
+                        </div>
+
+
+                        <!-- Subtotal -->
+
+                        <div class="summary-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <span id="cart-subtotal">
+                                ฿0
+                            </span>
+
+                        </div>
+
+
+                        <!-- Shipping -->
+
+                        <div class="summary-row">
+
+                            <span>
+                                Shipping
+                            </span>
+
+                            <span>
+                                คำนวณใน Checkout
+                            </span>
+
+                        </div>
+
+
+                        <div class="summary-divider"></div>
+
+
+                        <!-- Total -->
+
+                        <div class="summary-total">
+
+                            <span>
+                                TOTAL
+                            </span>
+
+                            <strong id="cart-total">
+                                ฿0
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Checkout -->
+
+                        <a
+                            href="checkout.html"
+                            id="checkout-btn"
+                            class="btn btn-black checkout-button"
+                        >
+                            ดำเนินการชำระเงิน
+                        </a>
+
+
+                        <br>
+
+
+                        <!-- Continue Shopping -->
+
+                        <a
+                            href="products.html"
+                            class="continue-shopping"
+                        >
+                            ← กลับหน้าหลัก
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- =========================
+                 CART INFO
+            ========================== -->
+
+            <div class="cart-info-grid">
+
+                <div class="cart-info-card">
+
+                    <h3>
+                        FREE SHIPPING
+                    </h3>
+
+                    <p>
+                        ฟรีค่าจัดส่ง
+                    </p>
+
+                </div>
+
+
+                <div class="cart-info-card">
+
+                    <h3>
+                        SECURE ORDER
+                    </h3>
+
+                    <p>
+                        ตรวจสอบรายละเอียดคำสั่งซื้อก่อนยืนยันทุกครั้ง
+                    </p>
+
+                </div>
+
+
+                <div class="cart-info-card">
+
+                    <h3>
+                        NEED HELP?
+                    </h3>
+
+                    <p>
+                        ติดต่อ DenimMan ผ่าน LINE ได้ตลอดช่วงเวลาทำการ
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+
+                <h2>
+                    DENIMMAN
+                </h2>
+
+                <p>
+                    STREET DENIM FOR YOUR EVERYDAY.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="products.html">
+                    SHOP
+                </a>
+
+                <a href="order.html">
+                    HOW TO ORDER
+                </a>
+
+                <a href="shipping.html">
+                    SHIPPING
+                </a>
+
+                <a href="contact.html">
+                    CONTACT
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DENIMMAN. ALL RIGHTS RESERVED.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <!--
+        products.js ใช้ Firebase
+        จึงต้องเป็น module
+    -->
+
+    <script
+        type="module"
+        src="js/products.js"
+    ></script>
+
+
+    <!--
+        cart.js จัดการ
+        LocalStorage + Cart
+    -->
+
+    <script
+        src="js/cart.js"
+    ></script>
+
+
+    <!--
+        main.js จัดการ
+        Navbar + Cart Count
+    -->
+
+    <script
+        src="js/main.js"
+    ></script>
+
+</body>
+
+</html>
