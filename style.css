@@ -306,19 +306,19 @@ select {
 */
 
 .baggy-image {
-    background-image: url("../images/product1.webp");
+    background-image: url("images/product1.webp");
 }
 
 .wide-image {
-    background-image: url("../images/product2.png");
+    background-image: url("images/product2.png");
 }
 
 .cargo-image {
-    background-image: url("../images/product3.webp");
+    background-image: url("images/product3.webp");
 }
 
 .straight-image {
-    background-image: url("../images/product4.png");
+    background-image: url("images/product4.png");
 }
 
 
@@ -429,7 +429,7 @@ select {
             rgba(0, 0, 0, 0.75),
             rgba(0, 0, 0, 0.25)
         ),
-        url("../images/promotion.jpg");
+        url("images/promotion.png");
 
     background-size: cover;
     background-position: center;
